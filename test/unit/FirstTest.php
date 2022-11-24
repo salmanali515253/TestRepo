@@ -3,9 +3,13 @@ use PHPUnit\Framework\TestCase;
 
 class FirstTest extends TestCase
 {
-    public function testTrueAssertsToTrue()
+    public function testTrueAssertsToFalse()
     {
         $this->assertFalse(false);
+    }
+    public function testTrueAssertsToTrue()
+    {
+        $this->assertTrue(true);
     }
 }
 ?>
