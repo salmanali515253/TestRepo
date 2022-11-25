@@ -7,14 +7,14 @@ test-job1:
   stage: test
   script:
     - echo "This job tests something"
-    -trcli `
-    -h "https://trcli.testrail.io"`
-    -u "ssalmanburhan@gmail.com"`
-    -p "salmanali03463816762"`
-    --project "TRCLI test project"`
-    parse_junit `
-    --title "Automated Test"`
-    -f "phpunit.xml"
+    -trcli \
+      -h "http://127.0.0.1:7777/testrail" \
+      -u "ssalmanburhan@gmail.com" \
+      -p "salmanali03463816762" \
+      --project "markdown Test" \
+      parse_junit \
+      --title "Automated test" \
+      -f "ci_test.xml"
 
 test-job2:
   stage: test
