@@ -4,6 +4,6 @@ trcli -y \
    -p "salmanali03463816762" \
    --project "Trcli Test" \
    parse_junit \
-   --title "Automated test 2" \
+   --title "Automated test 3" \
    --suite-id 2 \
    -f "ci_test.xml"
