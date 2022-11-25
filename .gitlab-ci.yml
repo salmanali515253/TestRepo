@@ -1,13 +1,25 @@
+image: python:latest
+before_script:
+  - python --version  # For debugging
+  - pip install virtualenv
+  - virtualenv venv
+  - source venv/bin/activate
+  - pip install trcli
 build-job:
   stage: build
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
+    - python --version
+    - pip --version
+    - trcli
 
 test-job1:
   stage: test
   script:
     - echo "This job tests something"
-    -trcli \
+    - echo "This job tests something"
+    - trcli
+    - trcli -y \
       -h "http://127.0.0.1:7777/testrail" \
       -u "ssalmanburhan@gmail.com" \
       -p "salmanali03463816762" \
