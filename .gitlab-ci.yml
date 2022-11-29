@@ -12,8 +12,7 @@ build-job:
     - python --version
     - pip --version
     - trcli
-    - script:
-  - "curl -X POST --fail -F token=glptt-568af68eaee864b4b14ead136e55413c8efdcdf3 -F ref=REF_NAME https://gitlab.com/api/v4/projects/41367989/trigger/pipeline"
+    - "curl -X POST --fail -F token=glptt-568af68eaee864b4b14ead136e55413c8efdcdf3 -F ref=REF_NAME https://gitlab.com/api/v4/projects/41367989/trigger/pipeline"
 test-job1:
   stage: test
   script:
