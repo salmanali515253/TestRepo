@@ -5,4 +5,5 @@
         <directory>test</directory>
     </testsuite>
 </testsuites>
+<logging outputFile="ci_test.xml"/>
 </phpunit>
