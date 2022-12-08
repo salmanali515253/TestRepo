@@ -5,7 +5,7 @@
         <directory>test</directory>
     </testsuite>
 </testsuites>
-<logging>
+<!-- <logging>
     <junit outputFile="ci_test.xml"/>
-</logging>
+</logging> -->
 </phpunit>

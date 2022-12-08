@@ -8,4 +8,3 @@ class FirstTest extends TestCase
         $this->assertFalse(false);
     }
 }
-?>

@@ -1,4 +1,4 @@
-vendor/bin/phpunit
+vendor/bin/phpunit --configuration phpunit.xml
 trcli -y \
    -h "http://127.0.0.1:7777/testrail" \
    -u "ssalmanburhan@gmail.com" \
