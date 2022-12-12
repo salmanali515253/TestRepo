@@ -19,7 +19,7 @@ jobs:
           install-yarn: true
           node-version: '16.13'
       - run: node --version
-      - run: sudo npm install -g npm@latest
+      - run: npm install -g npm@latest
       # Install Testmo CLI tool
       - run: npm install --no-save @testmo/testmo-cli
       - run:
