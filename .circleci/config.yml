@@ -33,6 +33,11 @@ jobs:
               --name "Mocha test run" \
               --source "unit-tests" \
               --results ci_test.xml \
+  say-hello-second:
+    steps:
+      - run:
+          name: "Say hello second"
+          command: "echo Hello, World! Second"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -40,6 +45,7 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      - say-hello-second
   say--second-hello-workflow:
     jobs:
       - say-hello
