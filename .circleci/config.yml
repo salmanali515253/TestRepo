@@ -32,12 +32,34 @@ jobs:
               --project-id 1 \
               --name "Mocha test run" \
               --source "unit-tests" \
-              --re;sults ci_test.xml \
+              --results ci_test.xml \
   say-hello-second:
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    docker:
+      - image: cimg/base:stable
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
+      - checkout
+      - node/install:
+          install-yarn: true
+          node-version: '16.13'
+      - run: node --version
+      - run: npm install -g npm@latest
+      # Install Testmo CLI tool
+      - run: npm install --no-save @testmo/testmo-cli
       - run:
           name: "Say hello second"
           command: "echo Hello, World! Second"
+      - run:
+          command: |
+            npx testmo automation:run:submit \
+              --instance "https://salburtechnologies.testmo.net" \
+              --project-id 1 \
+              --name "Mocha test run" \
+              --source "unit-tests" \
+              --results ci_test.xml \
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
