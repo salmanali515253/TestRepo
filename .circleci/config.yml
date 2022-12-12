@@ -32,7 +32,7 @@ jobs:
               --project-id 1 \
               --name "Mocha test run" \
               --source "unit-tests" \
-              --results ci_test.xml \
+              --re;sults ci_test.xml \
   say-hello-second:
     steps:
       - run:
