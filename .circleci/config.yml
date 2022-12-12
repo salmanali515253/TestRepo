@@ -19,7 +19,7 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-          - run:
+      - run:
           command: |
             npx testmo automation:run:submit \
               --instance "https://salburtechnologies.testmo.net" \
