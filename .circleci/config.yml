@@ -14,9 +14,20 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
+      # Install Testmo CLI tool
+      - run: npm install --no-save @testmo/testmo-cli
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+          - run:
+          command: |
+            npx testmo automation:run:submit \
+              --instance "https://salburtechnologies.testmo.net" \
+              --project-id 1 \
+              --name "Mocha test run" \
+              --source "unit-tests" \
+              --resources resources.json \
+              --results results/*.xml \
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
